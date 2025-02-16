@@ -1,10 +1,12 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import logo from '../assets/images/logo.png';
+import "../css/common.css";
 
 const Header = () => {
   return (
     <header className="sticky-top">
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-light bg-danger shadow">
         <div className="container-fluid">
           {/* Logo */}
           <a className="navbar-brand" href="/">
@@ -26,10 +28,10 @@ const Header = () => {
 
           {/* Collapsible Navbar */}
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div className="navbar-nav ms-auto"> {/* ✅ Moved to right using 'ms-auto' */}
-              <a className="nav-link active" aria-current="page" href="/">Home</a>
-              <a className="nav-link" href="/search">Search</a>
-              <a className="nav-link" href="/about">About</a>
+            <div className="navbar-nav ms-auto">
+              <NavLink exact to="/" className="nav-link" activeClassName="active">Home</NavLink>
+              <NavLink to="/search" className="nav-link" activeClassName="active">Search</NavLink>
+              <NavLink to="/about" className="nav-link" activeClassName="active">About</NavLink>
             </div>
           </div>
         </div>
