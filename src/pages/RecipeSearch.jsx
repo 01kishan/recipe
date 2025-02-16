@@ -85,26 +85,29 @@ const RecipeSearch = () => {
             {loading && <p className="text-center text-gray-600 mt-6">Loading...</p>}
 
             {/* Display Recipes */}
-            <div className="row">
-                {!loading && recipes.length > 0 && (
-                    <>
-                        <h4 className="mt-4">Results {searcingByTag && <small>(By tag '{searchByTag}')</small>}</h4>
-                        <hr />
+            
+            {!loading && recipes.length > 0 && (
+                <>
+                    <h4 className="mt-4">Results {searcingByTag && <small>(By tag '{searchByTag}')</small>}</h4>
+                    <hr />
+                    <div className="row justify-content-center">
                         {recipes.map((recipe) => (
-                            <div key={recipe.id} className="col-md-4 mt-4">
+                            <div key={recipe.id} className="col-md-4 mt-4 d-flex justify-content-center">
                                 <Card recipe={recipe} />
                             </div>
                         ))}
-                    </>
-                )}
+                    </div>
+                </>
+            )}
+            
 
-                {/* No Results Found */}
-                {!loading && recipes.length === 0 && searchQuery && (
-                    <p className="text-center text-gray-600 mt-6">
-                        No recipes found for "{searchQuery}". Try another search!
-                    </p>
-                )}
-            </div>
+            {/* No Results Found */}
+            {!loading && recipes.length === 0 && searchQuery && (
+                <p className="text-center text-gray-600 mt-6">
+                    No recipes found for "{searchQuery}". Try another search!
+                </p>
+            )}
+            
 
              {/* Tags Section */}
              <div className="mb-4 mt-4">

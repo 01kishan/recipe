@@ -28,9 +28,9 @@ const Home = () => {
             {loading ? (
                 <p className="text-center">Loading...</p>
             ) : (
-                <div className="row">
+                <div className="row justify-content-center">
                     {recipes.map((recipe) => (
-                        <div key={recipe.id} className="col-md-4 mt-4">
+                        <div key={recipe.id} className="col-md-4 mt-4 d-flex justify-content-center">
                             <Card recipe={recipe} />
                         </div>
                     ))}
